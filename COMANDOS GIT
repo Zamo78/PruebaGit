@@ -1,0 +1,35 @@
+COMANDOS GIT
+
+3 AREAS
+WORKING DIRECTORY
+STAGING AREA
+GIT DIRECTORY (REPOSITORIO)
+
+SE TRABAJA EN EL WORKING DIRECTORY
+
+git init // iniciar monitoreo de git
+git config --global user.name 	
+						.email
+git add -A o nombre del archivo // agregar todos con -A archivos a staging area			
+git status //muestra los archivos modificados en working directory		
+git commit -m "msj del commit" // enviar archivos de staging area al repositorio 
+git log //visualizar todos los commits
+
+git checkout //viaje en el tiempo en nuestras ramas o commits
+git checkout codigo hash // viajar al commit solicitado
+git checkout master //mover al ultimo commit hecho 
+
+git reset //Similar a checkout pero ELIMINA los commits 
+git reset --soft (seguido de codigo hash)//no influye en working area, no actua en el código
+git reset --mixed //no influye en working area ni en staging area (no recomendado)
+git reset --hard //Elimina todos los commits hasta el solicitado, además de su código
+
+********RAMAS********
+git branch //muestra todas las ramas 
+git branch nombre de rama //creacion de una nueva rama
+git checkout nombre de rama //cambio de rama (checkout puede utilizarse para commits o ramas)
+git branch -D nombre de rama //eliminar rama
+git branch -b "nombre de rama" //crear y cambiar a una rama
+
+*****FUSIONES****
+git merge nombre de rama a absorver //une o fusiona todo lo que posee la rama solicitada con la actual

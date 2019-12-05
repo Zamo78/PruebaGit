@@ -1,0 +1,109 @@
+<!--Ejercicios 07/09 -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Ejercicios </title>
+		<script type="text/javascript" src="ejer.js"></script>
+		<link rel="stylesheet" href="bootstrap.css">
+		<style>
+			body{
+				background-color: #E69D8E;
+			}
+			 h4{
+				text-align: center; font-weight: bold; font-size: 30px; margin-top: 25px;
+			}
+			h3{
+				font-size:16px;
+				font-weight: bold;
+			}
+			 p{
+				font-family: Verdana;
+				font-size: 15px;
+				font-weight: bold;
+			}
+			table {
+				border-collapse: separate;
+		
+			}
+		</style>
+	</head>
+<body>
+	<h4> Prueba Ejercicios JavaScript y GIT</h4>
+	<br><br>
+	<!--1er fila -->
+	<div class="row" style="text-align: center;">
+			<div class="col-sm-4" >
+		<h3>*EJERCICIO 1*<br><br>
+		Sumar numeros positivos de una lista.</h3>
+		<button type="button" class="btn-primary" style="background-color: red;" onclick="document.getElementById('ej1').innerHTML = sumaPos()">
+		SUMAR</button>
+		<br><br>
+		<p id="ej1"> </p>
+			</div>
+
+		<div class="col-sm-4">
+		<h3>*EJERCICIO 2*<br><br>
+		Ordenar alfabeticamente las palabras de un listado.</h3>
+		<button type="button" class="btn-primary" style="background-color: green;" onclick="document.getElementById('ej2').innerHTML = Alf()">
+		ORDENAR</button>
+		<br><br>
+		<p id="ej2"> </p>
+		</div>
+
+		<div class="col-sm-4">
+		<h3>*EJERCICIO 3*<br><br>
+		Pasar a mayuscula la primer letra de un listado de palabras.</h3>
+		<button type="button" class="btn-primary" style="background-color: lightblue;" onclick="document.getElementById('ej3').innerHTML = Mayus()">
+		MAYUSCULA</button>
+		<br><br>
+		<p id="ej3"> </p>	
+		</div>	
+	</div>
+	<br><br><br>
+	<!--2da fila-->
+
+		<div class="row" style="text-align: center;">
+			<div class="col-sm-4" >
+		<h3>*EJERCICIO 4*<br><br>
+		Remover de una lista los elementos falsy.</h3>
+		<button type="button" class="btn-primary" style="background-color: blue;" onclick="document.getElementById('ej4').innerHTML = Falsy()">
+		REMOVER</button>
+		<br><br>
+		<p id="ej4"> </p>
+			</div>
+
+		<div class="col-sm-4">
+		<h3>*EJERCICIO 5*<br><br>
+		Transformar oracion a lista y viceversa.</h3>
+		<button type="button" class="btn-primary" style="background-color: violet;" onclick="document.getElementById('ej5').innerHTML = oraLista()">
+		MODIFICAR</button>
+		<br><br>
+		<p id="ej5"> </p>
+		</div>
+
+		<div class="col-sm-4">
+		<h3>*EJERCICIO 6*<br><br>
+		Invertir las palabras de una oracion.</h3>
+		<button type="button" class="btn-primary" style="background-color: gray;" onclick="document.getElementById('ej6').innerHTML = Invertir()">
+		INVERTIR</button>
+		<br><br>
+		<p id="ej6"> </p>	
+		</div>	
+	</div>
+	<br><br>
+	<!--3er fila -->
+	<div class="row" style="text-align: center;">
+		<div class="col-sm-4">
+		</div>
+
+		<div class="col-sm-4">
+		<h3>*EJERCICIO 7*<br><br>
+		Enumerar en una oracion, las palabras de un listado.</h3>
+		<button type="button" class="btn-primary" style="background-color: black;" onclick="document.getElementById('ej7').innerHTML = enumPal()">
+		INVERTIR</button>
+		<br><br>
+		<p id="ej7"> </p>
+		</div>	
+
+</body>
+</html>	
