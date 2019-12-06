@@ -33,3 +33,12 @@ git branch -b "nombre de rama" //crear y cambiar a una rama
 
 *****FUSIONES****
 git merge nombre de rama a absorver //une o fusiona todo lo que posee la rama solicitada con la actual
+
+****CLONAR****
+(dentro del directorio a clonar)
+git clone URL //copiar proyecto o repositorio desde github a pc local
+git remote add origin URL //establecer vinculo entre el mismo proyecto local y remoto en gh
+git remote remove origin //elimina el vinculo
+
+git push origin master //enviar archivos de proyecto local hacia el remoto
+
