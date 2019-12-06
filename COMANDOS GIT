@@ -42,3 +42,10 @@ git remote remove origin //elimina el vinculo
 
 git push origin master //enviar archivos de proyecto local hacia el remoto
 
+GITHUB 
+
+Los issues son una forma de continuar, mejorar, recomendar o solucionar un error en nuestros repositorios
+
+Los Milestones son conjuntos de issues que se aplican para un proyecto, característica o período de tiempo.
+
+Los Labels son una manera de organizar diferentes tipos de problemas.
