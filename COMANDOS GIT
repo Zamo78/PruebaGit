@@ -13,7 +13,10 @@ git config --global user.name
 git add -A o nombre del archivo // agregar todos con -A archivos a staging area			
 git status //muestra los archivos modificados en working directory		
 git commit -m "msj del commit" // enviar archivos de staging area al repositorio 
+git commit --amend -m "nuevo msj" //sustituir o reemplazar mensaje del ultimo commit 
 git log //visualizar todos los commits
+
+##### HEAD //es el ultimo punto o commit en el que se trabajó
 
 git checkout //viaje en el tiempo en nuestras ramas o commits
 git checkout codigo hash // viajar al commit solicitado
@@ -30,6 +33,7 @@ git branch nombre de rama //creacion de una nueva rama
 git checkout nombre de rama //cambio de rama (checkout puede utilizarse para commits o ramas)
 git branch -D nombre de rama //eliminar rama
 git branch -b "nombre de rama" //crear y cambiar a una rama
+git branch -a //ver ramas incluyendo ocultas
 
 *****FUSIONES****
 git merge nombre de rama a absorver //une o fusiona todo lo que posee la rama solicitada con la actual
@@ -37,15 +41,132 @@ git merge nombre de rama a absorver //une o fusiona todo lo que posee la rama so
 ****CLONAR****
 (dentro del directorio a clonar)
 git clone URL //copiar proyecto o repositorio desde github a pc local
+
+***CONEXION DE PROYECTOS****
+git remote -v //visualizar conexiones 
 git remote add origin URL //establecer vinculo entre el mismo proyecto local y remoto en gh
 git remote remove origin //elimina el vinculo
 
 git push origin master //enviar archivos de proyecto local hacia el remoto
+git push origin master -f //forzar a realizar los cambios en github
 
-GITHUB 
+*****GITHUB ******
 
 Los issues son una forma de continuar, mejorar, recomendar o solucionar un error en nuestros repositorios
 
 Los Milestones son conjuntos de issues que se aplican para un proyecto, característica o período de tiempo.
 
 Los Labels son una manera de organizar diferentes tipos de problemas.
+
+****TAGS *****
+
+Los tags son puntos específicos en la historia de un proyecto y se utilizan para marcar las versiones del mismo.
+
+-Existen las tags anotadas, que son almacenadas como un objeto dentro de la base de Git y posee más información.
+
+Ej: git tag -a v1.0 -m "Mensaje"
+
+-Otro tipo son las tags ligeras, que son más simples y concisas.
+
+Ej: git tag v1.0
+
+-Especificación de tags
+
+git tag v1.0 "codigo hash del commit" (sin comillas)
+
+-Subir las tags a la plataforma
+
+git push origin "version nomenclada anteriormente" (sin comillas) //enviar tag particular
+ 
+git push origin --tags //enviar todos los tags
+
+****WORKFLOWS****
+
+Se llama workflows a los flujos de trabajo, incluyen proyectos propios, en equipo o con terceros.
+
+Proyectos propios //somos los dueños del repositorio, decidimos todo.
+    "     en equipo //similar a trabajar solo, pero habrá commits de los miembros del equipo.
+    "     con terceros //no somos dueños ni colaboramos en el proyecto, pero queremos participar.
+
+git fetch origin //traer los commits desde el repositorio remoto y ubicarlos en la rama oculta origin/master
+git merge origin/master //unir y absorver la rama origin/master con nuestro repositorio local
+
+*** FORK ***
+
+Clonar repositorio de un tercero, normalmente no se es miembro ni dueño del proyecto.
+
+Aparece una nueva rama. "upstream/master"
+
+git fetch upstream/master //bajar o traer los cambios del repositorio principal
+git fetch origin //traer los cambios o commits de nuestro repositorio, es decir, al que le hicimos Fork.
+
+
+******* GITHUB PAGES ******
+
+Sitio web para nosotros y nuestros proyectos
+
+Se pude generar un sitio web a partir de una organizacion o proyecto, útil para generar portafolios, blogs y cualquier pagina de front-end.
+
+-Para usuarios
+Para crearlo debe tener el nombre : username.github.io
+
+Con el dominio creado, se puede compartir a cualquier persona.
+
+-Para proyectos de organizacion
+
+Se debe clonar el proyecto o tenerlo localmente, luego crear la rama: 
+
+git branch gh-pages
+
+Despues de eso, subir todo a la rama, que va a ser la que se vea en internet.
+
+git push origin gh-pages
+
+Para visualizar el sitio web: nombredelaorganizacion.github.io/nombrederepositorio
+
+*****SSH KEYS****
+
+Se utilizan generalmente para conectarse facilmente a un servidor, sin tener que ingresar los datos a cada momento.
+
+Se genera en cualquier directorio de la computadora con la que se trabaja.
+
+ssh-keygen
+
+
+***** GIT HOOKS ***
+
+Son mecanismos que van a activar scripts, cuando suceden determinadas acciones.
+
+-¿Cómo crear un hook?
+
+Por ejemplo: crear un hook de post-commit
+
+1-Ingresar en el directorio donde se encuentra el proyecto. 
+2-Ingresar en el directorio oculto .git //cd .git
+3-Ingresar en el directorio de hooks //cd hooks
+4-Crear el hooks post-commit //touch post-commit
+5-Abrir el editor de texto GNU //nano post-commit
+6-Lo siguiente irá en el archivo creado, será lo que se ejecutará al realizar un commit.
+
+	#!/bin/sh //esto indica simplemente que es un shell script. (no es forzoso)
+	git push origin nombrederama //enviará automaticamente el commit hecho hacía el repositorio remoto
+	....demas commandos
+
+7-Para finalizar, Ctrl+X para cerrar, Yes, guardar cambios. Cambiar nombre
+8-Listo, hook creado.
+
+**** PULL ***
+
+Combinacion entre fetch + merge. Realiza los dos procesos 
+
+git pull origin nombrerama //Trae los datos(fetch) del repositorio remoto y los une(merge) en el repositorio local.
+
+
+
+**** VER CAMBIOS HECHOS EN UN ARCHIVO ****
+
+git diff nombrearchivo
+
+**** RETIRAR ARCHIVOS DE STAGING AREA ****
+
+git restore --staged nombrearchivo
